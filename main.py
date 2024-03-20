@@ -1,6 +1,4 @@
 from PIL import Image
-image = Image.open("káves.png")
-sirka, vyska = image.size
 
 def greenFilter(image):
     x  = 0
@@ -50,3 +48,20 @@ def redFilter(image):
             y += 1
         x += 1
     image.show()
+
+image = Image.open("kaves.png")
+sirka, vyska = image.size
+print("What filter would you like to apply to your image? (1, 2, 3)")
+print("1. Green Filter")
+print("2. Black and White Filter")
+print("3. Red Filter")
+uInput = input()
+if uInput == "1":
+    greenFilter(image)
+elif uInput == "2":
+    blackAndWhite(image)
+elif uInput == "3":
+    redFilter(image)
+else:
+    print("Invalid input. Please try again.")
+    uInput = input()
